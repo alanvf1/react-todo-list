@@ -5,7 +5,8 @@ import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { PlusCircle } from "@phosphor-icons/react";
 import { v4 as uuidv4 } from "uuid";
 
-const tasksList = JSON.parse(localStorage.getItem("tasks") ?? "");
+const tasksLocalStorage = localStorage.getItem("tasks") ?? "[]";
+const tasksList = JSON.parse(tasksLocalStorage);
 
 export function Tasks() {
   const [newTaskText, setNewTaskText] = useState<string>("");
